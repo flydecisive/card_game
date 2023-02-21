@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "StratosSkyeng Regular";
+  src: url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2") format("woff2"), url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff");
+}
+.difficulty_container {
+  background: #004980;
+  width: 1024px;
+  height: 774px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select_difficulty {
+  padding-bottom: 67px;
+  display: flex;
+  gap: 24px;
+}
+.select_difficulty_element {
+  font-size: 64px;
+  width: 98px;
+  height: 98px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0080C1;
+}
+
+.information_window {
+  padding-top: 52px;
+  padding-bottom: 48px;
+}
+
+.heading {
+  margin-bottom: 48px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "StratosSkyeng Regular";
+}
+
+.heading {
+  font-size: 40px;
+  color: #004980;
+  line-height: 48px;
+}
+
+.information_window {
+  background: #C2F5FF;
+  width: 480px;
+  height: 459px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-flow: column wrap;
+  box-sizing: border-box;
+}
+
+.button {
+  background: #7AC100;
+  width: 246px;
+  height: 50px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-size: 24px;
+}/*# sourceMappingURL=style.css.map */

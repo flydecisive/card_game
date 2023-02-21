@@ -1,0 +1,36 @@
+@import "vars";
+@import "difficulty_selection";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+}
+
+.heading {
+    font-size: $heading-font-size;
+    color: $heading-color;
+    line-height: 48px;
+}
+
+.information_window {
+    background: $secondary-background;
+    width: $information-window-width;
+    height: $information-window-height;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+}
+
+.button {
+    background: $buttons-background;
+    width: $button-width;
+    height: $button-height;
+    color: $main-text-color;
+    border: none;
+    border-radius: $border-radius;
+    font-size: $button-font-size;
+}
