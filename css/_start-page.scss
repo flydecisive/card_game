@@ -1,0 +1,49 @@
+.popup-wrapper {
+    background: $main-background;
+    width: $popup-wrapper-width;
+    height: $popup-wrapper-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-list {
+    padding-bottom: 67px;
+    display: flex;
+    gap: 24px;
+
+    &__item {
+        font-size: $button-list__item-font-size;
+        width: $button-list__item-element-size;
+        height: $button-list__item-element-size;
+        background-color: $third-background;
+        border-radius: $border-radius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $button-list__item-text-color;
+    }
+
+    &__item input[type=radio] {
+        display: none;
+    }
+
+    &__item label {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__item input[type=radio]:checked + label {
+        scale: 125%;
+    }
+}
+
+.popup {
+    padding-top: 52px;
+    padding-bottom: 48px;
+}
+
+.popup__title {
+    margin-bottom: 48px;
+}
