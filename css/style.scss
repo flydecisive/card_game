@@ -1,27 +1,20 @@
 @import "vars";
 @import "start-page";
+@import "game-page";
 
 * {
     margin: 0;
     padding: 0;
-    font-family: $font-family-regular;
+    font-family: $font-family-regular,sans-serif;
 }
 
-.popup__title {
-    font-size: $popup__title-font-size;
-    color: $popup__title-color;
-    line-height: 48px;
+.center {
+    padding-left: calc(50% - 512px);
+    padding-right: calc(50% - 512px);
 }
 
-.popup {
-    background: $secondary-background;
-    width: $popup-width;
-    height: $popup-height;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-flow: column wrap;
+.container {
+    background: $main-background;
     box-sizing: border-box;
 }
 

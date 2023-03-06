@@ -1,0 +1,24 @@
+.game-items {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    justify-items: center;
+    gap: 15px;
+    margin-top: 35px;
+    padding-bottom: 45px;
+}
+
+.game-top {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 22px;
+}
+
+.game-timer {
+    width: 155px;
+    height: 91px;
+    font-size: 64px;
+    line-height: 72px;
+    color: $main-text-color;
+}

@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button?.addEventListener('click', () => {
             container.innerHTML = '';
             console.log(`Уровень сложности: ${condition.complexity}`);
+            const itemsCount = 36;
+            new GamePage(container, itemsCount);
         });
     }
 });
@@ -34,25 +36,25 @@ const condition: Condition = {
 
 class StartPage {
     constructor (elementsCount: number, container: Element) {
-        this.startPage(elementsCount, container);
+        this.initPage(elementsCount, container);
     }
 
-    startPage (elementsCount: number, container: Element): void {
+    initPage (elementsCount: number, container: Element): void {
         const popupWrapper = document.createElement('div');
         popupWrapper.classList.add('popup-wrapper');
         const popup = document.createElement('div');
         popup.classList.add('popup');
         const popupTitle = document.createElement('h2');
-        popupTitle.classList.add('popup__title');
+        popupTitle.classList.add('popup-title');
         popupTitle.innerHTML = 'Выбери <br>сложность';
         const popupButtonList = document.createElement('div');
-        popupButtonList.classList.add('popup__button-list', 'button-list');
+        popupButtonList.classList.add('popup-button-list', 'button-list');
         const button = document.createElement('button');
         button.classList.add('button');
         button.textContent = 'Старт';
         for (let i = 0; i < elementsCount; i++) {
             const buttonListItem = document.createElement('div');
-            buttonListItem.classList.add('button-list__item');
+            buttonListItem.classList.add('button-list-item');
             const input = document.createElement('input');
             input.classList.add('input');
             input.id = `radio-${i + 1}`;
@@ -71,5 +73,40 @@ class StartPage {
         popup.appendChild(button);
         popupWrapper.appendChild(popup);
         container.appendChild(popupWrapper);
+    }
+}
+
+class GamePage {
+    constructor (container: Element, itemsCount: number) {
+        this.initPage(container, itemsCount);
+    }
+    
+    initPage (container: Element, itemsCount: number) {
+        const gameTop = document.createElement('div');
+        gameTop.classList.add('game-top');
+        const gameTimer = document.createElement('div');
+        gameTimer.classList.add('game-timer');
+        gameTimer.textContent = '00.00';
+        const button = document.createElement('button');
+        button.classList.add('button');
+        button.textContent = 'Начать заново';
+        gameTop.appendChild(gameTimer);
+        gameTop.appendChild(button);
+        container.appendChild(gameTop);
+        const gameItems = document.createElement('div');
+        gameItems.classList.add('game-items');
+        this.initGameItem(gameItems, itemsCount);
+        container.appendChild(gameItems);
+    }
+
+    initGameItem (container: Element, itemsCount: number): void {
+        for (let i = 0; i < itemsCount; i++) {
+            const gameItem = document.createElement('div');
+            gameItem.classList.add('game-item');
+            const gameItemImg = document.createElement('img');
+            gameItemImg.src = './img/shirt.png';
+            gameItem.appendChild(gameItemImg);
+            container.appendChild(gameItem);
+        }
     }
 }

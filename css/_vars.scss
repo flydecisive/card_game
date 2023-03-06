@@ -1,24 +1,24 @@
 //fonts
 @font-face {
-    font-family: "StratosSkyeng Regular";
-    src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"), 
+    font-family: 'StratosSkyeng Regular';
+    src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
     url("/fonts/stratosskyengweb-regular.woff") format("woff");
 }
 
 @font-face {
-    font-family: "StratosSkyeng Medium";
-    src: url("/fonts/stratosskyengweb-medium.woff2") format("woff2"), 
-    url("/fonts/stratosskyengweb-medium.woff") format("woff");
+    font-family: 'StratosSkyeng Medium';
+    src: url("/fonts/stratosskyengweb-medium.woff2") format("'woff2'"), 
+    url("/fonts/stratosskyengweb-medium.woff") format("'woff'");
 }
 
-$font-family-regular: "StratosSkyeng Regular";
-$font-family-medium: "StratosSkyeng Medium";
+$font-family-regular: 'StratosSkyeng Regular';
+$font-family-medium: 'StratosSkyeng Medium';
 
 //backgrounds
 $main-background: #004980;
-$secondary-background: #C2F5FF;
-$buttons-background: #7AC100;
-$third-background: #FFFFFF;
+$secondary-background: #c2f5ff;
+$buttons-background: #7ac100;
+$third-background: #fff;
 
 //font sizes
 $popup__title-font-size: 40px;
@@ -37,8 +37,8 @@ $button-height: 50px;
 
 
 //text colors
-$button-list__item-text-color: #0080C1;
-$main-text-color: #FFFFFF;
+$button-list__item-text-color: #0080c1;
+$main-text-color: #fff;
 $popup__title-color: #004980;
 
 //sizes

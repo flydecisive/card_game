@@ -1,5 +1,4 @@
 .popup-wrapper {
-    background: $main-background;
     width: $popup-wrapper-width;
     height: $popup-wrapper-height;
     display: flex;
@@ -12,7 +11,7 @@
     display: flex;
     gap: 24px;
 
-    &__item {
+    &-item {
         font-size: $button-list__item-font-size;
         width: $button-list__item-element-size;
         height: $button-list__item-element-size;
@@ -24,17 +23,17 @@
         color: $button-list__item-text-color;
     }
 
-    &__item input[type=radio] {
+    &-item input[type='radio'] {
         display: none;
     }
 
-    &__item label {
+    &-item label {
         display: inline-block;
         cursor: pointer;
-        user-select: none;
+        // user-select: none;
     }
 
-    &__item input[type=radio]:checked + label {
+    &-item input[type='radio']:checked + label {
         scale: 125%;
     }
 }
@@ -42,8 +41,20 @@
 .popup {
     padding-top: 52px;
     padding-bottom: 48px;
+    background: $secondary-background;
+    width: $popup-width;
+    height: $popup-height;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-flow: column wrap;
+    box-sizing: border-box; 
 }
 
-.popup__title {
+.popup-title {
     margin-bottom: 48px;
+    font-size: $popup__title-font-size;
+    color: $popup__title-color;
+    line-height: 48px;
 }
