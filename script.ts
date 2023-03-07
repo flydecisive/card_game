@@ -82,21 +82,31 @@ class GamePage {
     }
     
     initPage (container: Element, itemsCount: number) {
+        const gameWrapper = document.createElement('div');
+        gameWrapper.classList.add('game-wrapper');
         const gameTop = document.createElement('div');
         gameTop.classList.add('game-top');
         const gameTimer = document.createElement('div');
         gameTimer.classList.add('game-timer');
-        gameTimer.textContent = '00.00';
+        const min = document.createElement('div');
+        min.classList.add('game-timer-minutes');
+        min.textContent = '00';
+        const sec = document.createElement('div');
+        sec.classList.add('game-timer-seconds');
+        sec.textContent = '00';
+        gameTimer.appendChild(min);
+        gameTimer.appendChild(sec);
         const button = document.createElement('button');
         button.classList.add('button');
         button.textContent = 'Начать заново';
-        gameTop.appendChild(gameTimer);
-        gameTop.appendChild(button);
-        container.appendChild(gameTop);
         const gameItems = document.createElement('div');
         gameItems.classList.add('game-items');
         this.initGameItem(gameItems, itemsCount);
-        container.appendChild(gameItems);
+        gameTop.appendChild(gameTimer);
+        gameTop.appendChild(button);
+        gameWrapper.appendChild(gameTop);
+        gameWrapper.appendChild(gameItems);
+        container.appendChild(gameWrapper);
     }
 
     initGameItem (container: Element, itemsCount: number): void {

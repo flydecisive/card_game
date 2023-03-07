@@ -1,17 +1,12 @@
 @font-face {
-  font-family: 'StratosSkyeng Regular';
-  src: url('/fonts/stratosskyengweb-regular.woff2') format('woff2'),
-    url('/fonts/stratosskyengweb-regular.woff') format('woff');
+  font-family: "StratosSkyeng Regular";
+  src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"), url("/fonts/stratosskyengweb-regular.woff") format("woff");
 }
 @font-face {
-  font-family: 'StratosSkyeng Medium';
-  src: url('/fonts/stratosskyengweb-medium.woff2') format("'woff2'"),
-    url('/fonts/stratosskyengweb-medium.woff') format("'woff'");
+  font-family: "StratosSkyeng Medium";
+  src: url("/fonts/stratosskyengweb-medium.woff2") format("'woff2'"), url("/fonts/stratosskyengweb-medium.woff") format("'woff'");
 }
-
 .popup-wrapper {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +17,6 @@
   display: flex;
   gap: 24px;
 }
-
 .button-list-item {
   font-size: 64px;
   width: 98px;
@@ -34,17 +28,14 @@
   align-items: center;
   color: #0080c1;
 }
-
-.button-list-item input[type='radio'] {
+.button-list-item input[type=radio] {
   display: none;
 }
-
 .button-list-item label {
   display: inline-block;
   cursor: pointer;
 }
-
-.button-list-item input[type='radio']:checked + label {
+.button-list-item input[type=radio]:checked + label {
   scale: 125%;
 }
 
@@ -69,21 +60,29 @@
   line-height: 48px;
 }
 
+.game-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-items {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto;
   justify-items: center;
   gap: 15px;
-  margin-top: 35px;
-  padding-bottom: 45px;
+  width: 975px;
 }
 
 .game-top {
-  box-sizing: border-box;
+  width: 975px;
   display: flex;
   justify-content: space-between;
-  padding-top: 22px;
+  align-items: auto;
+  margin-top: 22px;
 }
 
 .game-timer {
@@ -94,10 +93,21 @@
   color: #fff;
 }
 
+.game-timer-minutes {
+  display: inline-block;
+}
+.game-timer-minutes::after {
+  content: ".";
+}
+
+.game-timer-seconds {
+  display: inline-block;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'StratosSkyeng Regular', sans-serif;
+  font-family: "StratosSkyeng Regular", sans-serif;
 }
 
 .center {
@@ -108,6 +118,12 @@
 .container {
   background: #004980;
   box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
@@ -118,4 +134,7 @@
   border: none;
   border-radius: 12px;
   font-size: 24px;
-} /*# sourceMappingURL=style.css.map */
+}
+.button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

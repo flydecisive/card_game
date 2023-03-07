@@ -16,6 +16,12 @@
 .container {
     background: $main-background;
     box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .button {
@@ -26,4 +32,8 @@
     border: none;
     border-radius: $border-radius;
     font-size: $button-font-size;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
