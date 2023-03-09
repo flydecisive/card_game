@@ -13,10 +13,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: $button-list__item-element-size;
-    height: $button-list__item-element-size;
-    color: $button-list__item-text-color;
-    font-size: $button-list__item-font-size;
+    width: $button-list-item-element-size;
+    height: $button-list-item-element-size;
+    color: $button-list-item-text-color;
+    font-size: $button-list-item-font-size;
     background-color: $third-background;
     border-radius: $border-radius;
   }
@@ -51,7 +51,7 @@
 
 .popup-title {
   margin-bottom: 48px;
-  color: $popup__title-color;
-  font-size: $popup__title-font-size;
+  color: $popup-title-color;
+  font-size: $popup-title-font-size;
   line-height: 48px;
 }

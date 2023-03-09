@@ -8,6 +8,7 @@
     "lint:ts": "eslint ./**/*.ts",
     "stylelint": "stylelint ./**/*{.css,.scss}",
     "stylelint:fix": "stylelint ./**/*{.css,.scss} --fix",
+    "prepare": "husky install",
     "lint": "npm run lint:ts && npm run stylelint:fix"
   },
   "repository": {
@@ -34,6 +35,7 @@
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^30.0.1",
+    "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-order": "^6.0.3",
     "stylelint-prettier": "^3.0.0",
     "stylelint-scss": "^4.4.0"

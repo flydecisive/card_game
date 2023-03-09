@@ -1,6 +1,6 @@
-@import url('vars');
-@import url('start-page');
-@import url('game-page.scss');
+@import 'vars';
+@import 'start-page';
+@import 'game-page';
 
 * {
   margin: 0;
@@ -21,7 +21,6 @@
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  height: auto;
   background: $main-background;
 }
 

@@ -73,6 +73,7 @@
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .game-items {
@@ -81,8 +82,6 @@
   grid-template-columns: repeat(9, 1fr);
   gap: 15px;
   justify-items: center;
-  box-sizing: border-box;
-  width: 975px;
 }
 
 .game-top {
@@ -90,30 +89,42 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 975px;
   height: 91px;
+  width: 975px;
 }
 
 .game-timer {
   display: flex;
   flex-flow: column;
-  width: 155px;
+  width: 160px;
   color: #fff;
-  font-size: 64px;
-  line-height: 72px;
+}
+
+.game-timer-minutes,
+.game-timer-seconds {
+  position: relative;
+}
+
+.game-timer-minutes::after,
+.game-timer-seconds::after {
+  content: 'min';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.game-timer-seconds::after {
+  content: 'sec';
 }
 
 .timer-wrapper {
   display: grid;
   grid-template-columns: 1fr 20px 1fr;
   text-align: center;
-}
-
-.timer-title-sec,
-.timer-title-min {
-  font-size: 16px;
-  line-height: 32px;
-  text-align: right;
+  font-size: 64px;
+  line-height: 72px;
 }
 
 * {
@@ -135,7 +146,6 @@
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  height: auto;
   background: #004980;
 }
 

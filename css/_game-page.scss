@@ -1,6 +1,7 @@
 .game-wrapper {
   display: flex;
   flex-flow: column wrap;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 }
@@ -11,8 +12,6 @@
   grid-template-columns: repeat(9, 1fr);
   gap: 15px;
   justify-items: center;
-  box-sizing: border-box;
-  width: 975px;
 }
 
 .game-top {
@@ -27,21 +26,33 @@
 .game-timer {
   display: flex;
   flex-flow: column;
-  width: 155px;
+  width: 160px;
   color: $main-text-color;
-  font-size: 64px;
-  line-height: 72px;
+
+  &-minutes,
+  &-seconds {
+    position: relative;
+  }
+
+  &-minutes::after,
+  &-seconds::after {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 16px;
+    line-height: 32px;
+    content: 'min';
+  }
+
+  &-seconds::after {
+    content: 'sec';
+  }
 }
 
 .timer-wrapper {
   display: grid;
   grid-template-columns: 1fr 20px 1fr;
+  font-size: 64px;
+  line-height: 72px;
   text-align: center;
-}
-
-.timer-title-sec,
-.timer-title-min {
-  font-size: 16px;
-  line-height: 32px;
-  text-align: right;
 }

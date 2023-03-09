@@ -90,19 +90,6 @@ var GamePage = /** @class */ (function () {
         container.appendChild(gameWrapper);
     };
     GamePage.prototype.initTimer = function (container) {
-        var timerTitleWrapper = document.createElement('div');
-        timerTitleWrapper.classList.add('timer-wrapper');
-        timerTitleWrapper.classList.add('title-wrapper');
-        var labelMin = document.createElement('div');
-        labelMin.classList.add('timer-title-min');
-        labelMin.textContent = 'min';
-        var devider = document.createElement('div');
-        var labelSec = document.createElement('div');
-        labelSec.classList.add('timer-title-sec');
-        labelSec.textContent = 'sec';
-        timerTitleWrapper.appendChild(labelMin);
-        timerTitleWrapper.appendChild(devider);
-        timerTitleWrapper.appendChild(labelSec);
         var timerWrapper = document.createElement('div');
         timerWrapper.classList.add('timer-wrapper');
         var min = document.createElement('div');
@@ -116,7 +103,6 @@ var GamePage = /** @class */ (function () {
         timerWrapper.appendChild(min);
         timerWrapper.appendChild(dot);
         timerWrapper.appendChild(sec);
-        container.appendChild(timerTitleWrapper);
         container.appendChild(timerWrapper);
     };
     GamePage.prototype.initGameItem = function (container, itemsCount) {

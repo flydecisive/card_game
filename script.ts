@@ -103,18 +103,6 @@ class GamePage {
   }
 
   initTimer(container: Element) {
-    const timerTitleWrapper = document.createElement('div');
-    timerTitleWrapper.classList.add('timer-wrapper');
-    const labelMin = document.createElement('div');
-    labelMin.classList.add('timer-title-min');
-    labelMin.textContent = 'min';
-    const devider = document.createElement('div');
-    const labelSec = document.createElement('div');
-    labelSec.classList.add('timer-title-sec');
-    labelSec.textContent = 'sec';
-    timerTitleWrapper.appendChild(labelMin);
-    timerTitleWrapper.appendChild(devider);
-    timerTitleWrapper.appendChild(labelSec);
     const timerWrapper = document.createElement('div');
     timerWrapper.classList.add('timer-wrapper');
     const min = document.createElement('div');
@@ -128,7 +116,6 @@ class GamePage {
     timerWrapper.appendChild(min);
     timerWrapper.appendChild(dot);
     timerWrapper.appendChild(sec);
-    container.appendChild(timerTitleWrapper);
     container.appendChild(timerWrapper);
   }
 
