@@ -5,11 +5,10 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write",
-    "lint:js": "eslint ./**/*.js",
-    "lint:css": "stylelint ./css/*.css",
-    "lint": "npm run lint:js && npm run lint:css",
-    "prepare": "husky install"
+    "lint:ts": "eslint ./**/*.ts",
+    "stylelint": "stylelint ./**/*{.css,.scss}",
+    "stylelint:fix": "stylelint ./**/*{.css,.scss} --fix",
+    "lint": "npm run lint:ts && npm run stylelint:fix"
   },
   "repository": {
     "type": "git",
@@ -23,13 +22,20 @@
   },
   "homepage": "https://github.com/flydecisive/card_game#readme",
   "devDependencies": {
+    "husky": "^8.0.3"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.3",
     "prettier": "^2.8.4",
+    "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^30.0.1",
-    "stylelint-prettier": "^3.0.0"
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^3.0.0",
+    "stylelint-scss": "^4.4.0"
   }
 }

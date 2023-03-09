@@ -1,58 +1,57 @@
 .popup-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-list {
-    padding-bottom: 67px;
+  display: flex;
+  gap: 24px;
+  padding-bottom: 67px;
+
+  &-item {
     display: flex;
-    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    width: $button-list__item-element-size;
+    height: $button-list__item-element-size;
+    color: $button-list__item-text-color;
+    font-size: $button-list__item-font-size;
+    background-color: $third-background;
+    border-radius: $border-radius;
+  }
 
-    &-item {
-        font-size: $button-list__item-font-size;
-        width: $button-list__item-element-size;
-        height: $button-list__item-element-size;
-        background-color: $third-background;
-        border-radius: $border-radius;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $button-list__item-text-color;
-    }
+  &-item input[type='radio'] {
+    display: none;
+  }
 
-    &-item input[type='radio'] {
-        display: none;
-    }
+  &-item label {
+    display: inline-block;
+    cursor: pointer;
+  }
 
-    &-item label {
-        display: inline-block;
-        cursor: pointer;
-        // user-select: none;
-    }
-
-    &-item input[type='radio']:checked + label {
-        scale: 125%;
-    }
+  &-item input[type='radio']:checked + label {
+    scale: 125%;
+  }
 }
 
 .popup {
-    padding-top: 52px;
-    padding-bottom: 48px;
-    background: $secondary-background;
-    width: $popup-width;
-    height: $popup-height;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-flow: column wrap;
-    box-sizing: border-box; 
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  box-sizing: border-box;
+  width: $popup-width;
+  height: $popup-height;
+  padding-top: 52px;
+  padding-bottom: 48px;
+  text-align: center;
+  background: $secondary-background;
+  border-radius: 12px;
 }
 
 .popup-title {
-    margin-bottom: 48px;
-    font-size: $popup__title-font-size;
-    color: $popup__title-color;
-    line-height: 48px;
+  margin-bottom: 48px;
+  color: $popup__title-color;
+  font-size: $popup__title-font-size;
+  line-height: 48px;
 }

@@ -1,14 +1,14 @@
 //fonts
 @font-face {
-    font-family: 'StratosSkyeng Regular';
-    src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
-    url("/fonts/stratosskyengweb-regular.woff") format("woff");
+  font-family: 'StratosSkyeng Regular';
+  src: url('/fonts/stratosskyengweb-regular.woff2') format('woff2'),
+    url('/fonts/stratosskyengweb-regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'StratosSkyeng Medium';
-    src: url("/fonts/stratosskyengweb-medium.woff2") format("'woff2'"), 
-    url("/fonts/stratosskyengweb-medium.woff") format("'woff'");
+  font-family: 'StratosSkyeng Medium';
+  src: url('/fonts/stratosskyengweb-medium.woff2') format('woff2'),
+    url('/fonts/stratosskyengweb-medium.woff') format('woff');
 }
 
 $font-family-regular: 'StratosSkyeng Regular';
@@ -34,7 +34,6 @@ $button-width: 246px;
 // $popup-wrapper-height: 100vh;
 $popup-height: 459px;
 $button-height: 50px;
-
 
 //text colors
 $button-list__item-text-color: #0080c1;

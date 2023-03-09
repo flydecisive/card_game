@@ -1,140 +1,154 @@
 @font-face {
-  font-family: "StratosSkyeng Regular";
-  src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"), url("/fonts/stratosskyengweb-regular.woff") format("woff");
+  font-family: 'StratosSkyeng Regular';
+  src: url('/fonts/stratosskyengweb-regular.woff2') format('woff2'),
+    url('/fonts/stratosskyengweb-regular.woff') format('woff');
 }
+
 @font-face {
-  font-family: "StratosSkyeng Medium";
-  src: url("/fonts/stratosskyengweb-medium.woff2") format("'woff2'"), url("/fonts/stratosskyengweb-medium.woff") format("'woff'");
+  font-family: 'StratosSkyeng Medium';
+  src: url('/fonts/stratosskyengweb-medium.woff2') format('woff2'),
+    url('/fonts/stratosskyengweb-medium.woff') format('woff');
 }
+
 .popup-wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .button-list {
-  padding-bottom: 67px;
   display: flex;
   gap: 24px;
+  padding-bottom: 67px;
 }
+
 .button-list-item {
-  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 98px;
   height: 98px;
+  color: #0080c1;
+  font-size: 64px;
   background-color: #fff;
   border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #0080c1;
 }
-.button-list-item input[type=radio] {
+
+.button-list-item input[type='radio'] {
   display: none;
 }
+
 .button-list-item label {
   display: inline-block;
   cursor: pointer;
 }
-.button-list-item input[type=radio]:checked + label {
+
+.button-list-item input[type='radio']:checked + label {
   scale: 125%;
 }
 
 .popup {
-  padding-top: 52px;
-  padding-bottom: 48px;
-  background: #c2f5ff;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  box-sizing: border-box;
   width: 480px;
   height: 459px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
+  padding-top: 52px;
+  padding-bottom: 48px;
   text-align: center;
-  flex-flow: column wrap;
-  box-sizing: border-box;
+  background: #c2f5ff;
+  border-radius: 12px;
 }
 
 .popup-title {
   margin-bottom: 48px;
-  font-size: 40px;
   color: #004980;
+  font-size: 40px;
   line-height: 48px;
 }
 
 .game-wrapper {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .game-items {
-  box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
   grid-template-rows: auto;
-  justify-items: center;
+  grid-template-columns: repeat(9, 1fr);
   gap: 15px;
+  justify-items: center;
+  box-sizing: border-box;
   width: 975px;
 }
 
 .game-top {
-  width: 975px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: auto;
-  margin-top: 22px;
+  box-sizing: border-box;
+  width: 975px;
+  height: 91px;
 }
 
 .game-timer {
+  display: flex;
+  flex-flow: column;
   width: 155px;
-  height: 91px;
+  color: #fff;
   font-size: 64px;
   line-height: 72px;
-  color: #fff;
 }
 
-.game-timer-minutes {
-  display: inline-block;
-}
-.game-timer-minutes::after {
-  content: ".";
+.timer-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  text-align: center;
 }
 
-.game-timer-seconds {
-  display: inline-block;
+.timer-title-sec,
+.timer-title-min {
+  font-size: 16px;
+  line-height: 32px;
+  text-align: right;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "StratosSkyeng Regular", sans-serif;
+  font-family: 'StratosSkyeng Regular', sans-serif;
 }
 
 .center {
-  padding-left: calc(50% - 512px);
   padding-right: calc(50% - 512px);
+  padding-left: calc(50% - 512px);
 }
 
 .container {
-  background: #004980;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  background: #004980;
 }
 
 .button {
-  background: #7ac100;
   width: 246px;
   height: 50px;
   color: #fff;
+  font-size: 24px;
+  background: #7ac100;
   border: none;
   border-radius: 12px;
-  font-size: 24px;
 }
+
 .button:hover {
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

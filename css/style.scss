@@ -1,39 +1,40 @@
-@import "vars";
-@import "start-page";
-@import "game-page";
+@import url('vars');
+@import url('start-page');
+@import url('game-page.scss');
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: $font-family-regular,sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-regular, sans-serif;
 }
 
 .center {
-    padding-left: calc(50% - 512px);
-    padding-right: calc(50% - 512px);
+  padding-right: calc(50% - 512px);
+  padding-left: calc(50% - 512px);
 }
 
 .container {
-    background: $main-background;
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  height: auto;
+  background: $main-background;
 }
 
 .button {
-    background: $buttons-background;
-    width: $button-width;
-    height: $button-height;
-    color: $main-text-color;
-    border: none;
-    border-radius: $border-radius;
-    font-size: $button-font-size;
+  width: $button-width;
+  height: $button-height;
+  color: $main-text-color;
+  font-size: $button-font-size;
+  background: $buttons-background;
+  border: none;
+  border-radius: $border-radius;
 
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
