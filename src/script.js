@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+require("./css/style.scss");
 document.addEventListener('DOMContentLoaded', function () {
     var container = document.querySelector('.container');
     if (container) {
@@ -110,7 +113,7 @@ var GamePage = /** @class */ (function () {
             var gameItem = document.createElement('div');
             gameItem.classList.add('game-item');
             var gameItemImg = document.createElement('img');
-            gameItemImg.src = './img/shirt.png';
+            gameItemImg.src = './static/shirt.png';
             gameItem.appendChild(gameItemImg);
             container.appendChild(gameItem);
         }

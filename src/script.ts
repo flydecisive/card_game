@@ -1,3 +1,5 @@
+import './css/style.scss';
+
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container');
   if (container) {
@@ -124,7 +126,7 @@ class GamePage {
       const gameItem = document.createElement('div');
       gameItem.classList.add('game-item');
       const gameItemImg = document.createElement('img');
-      gameItemImg.src = './img/shirt.png';
+      gameItemImg.src = './static/shirt.png';
       gameItem.appendChild(gameItemImg);
       container.appendChild(gameItem);
     }
