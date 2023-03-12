@@ -1,18 +1,17 @@
 @font-face {
   font-family: "StratosSkyeng Regular";
-  src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
-    url("/fonts/stratosskyengweb-regular.woff") format("woff");
+  src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"), url("/fonts/stratosskyengweb-regular.woff") format("woff");
 }
 @font-face {
   font-family: "StratosSkyeng Medium";
-  src: url("/fonts/stratosskyengweb-medium.woff2") format("woff2"),
-    url("/fonts/stratosskyengweb-medium.woff") format("woff");
+  src: url("/fonts/stratosskyengweb-medium.woff2") format("woff2"), url("/fonts/stratosskyengweb-medium.woff") format("woff");
 }
-
 .popup-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .button-list {
@@ -20,7 +19,6 @@
   gap: 24px;
   padding-bottom: 67px;
 }
-
 .button-list-item {
   display: flex;
   align-items: center;
@@ -32,17 +30,14 @@
   background-color: #fff;
   border-radius: 12px;
 }
-
-.button-list-item input[type="radio"] {
+.button-list-item input[type=radio] {
   display: none;
 }
-
 .button-list-item label {
   display: inline-block;
   cursor: pointer;
 }
-
-.button-list-item input[type="radio"]:checked + label {
+.button-list-item input[type=radio]:checked + label {
   scale: 125%;
 }
 
@@ -73,14 +68,40 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  padding-top: 22px;
 }
 
 .game-items {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
   justify-items: center;
+}
+
+.game-item {
+  width: 113px;
+  height: 151px;
+  background-color: #fff;
+  border-radius: 6px;
+  font-size: 24px;
+  position: relative;
+}
+.game-item-shirt {
+  width: 100%;
+  height: 100%;
+}
+.game-item-rank {
+  padding-left: 5px;
+}
+.game-item-img {
+  scale: 110%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .game-top {
@@ -90,6 +111,7 @@
   box-sizing: border-box;
   width: 975px;
   height: 91px;
+  margin-bottom: 35px;
 }
 
 .game-timer {
@@ -98,14 +120,10 @@
   width: 160px;
   color: #fff;
 }
-
-.game-timer-minutes,
-.game-timer-seconds {
+.game-timer-minutes, .game-timer-seconds {
   position: relative;
 }
-
-.game-timer-minutes::after,
-.game-timer-seconds::after {
+.game-timer-minutes::after, .game-timer-seconds::after {
   position: absolute;
   top: -20px;
   right: 0;
@@ -113,7 +131,6 @@
   line-height: 32px;
   content: "min";
 }
-
 .game-timer-seconds::after {
   content: "sec";
 }
@@ -137,11 +154,11 @@
   padding-left: calc(50% - 512px);
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
@@ -157,7 +174,6 @@
   border: none;
   border-radius: 12px;
 }
-
 .button:hover {
   cursor: pointer;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
