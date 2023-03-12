@@ -177,7 +177,7 @@ class GamePage {
               condition.cards[Number(condition.userCards[1])].suit
           ) {
             console.log(true);
-            let elem = Number(choosenItems[0].getAttribute("data-key"));
+            const elem = Number(choosenItems[0].getAttribute("data-key"));
             delete condition.cards[elem];
             condition.userCards = [];
             choosenItems = [];
@@ -239,13 +239,13 @@ class GamePage {
   // инициализация игровой картинки
   initGameItemImg(gameItems: Element): void {
     const items = gameItems.querySelectorAll(".game-item");
-    let indexes = [];
+    const indexes = [];
     for (let i = 0; i < items.length; i++) {
       indexes.push(i);
     }
     let currentIndex = indexes.length;
     while (currentIndex !== 0) {
-      let randomIndex = Math.floor(Math.random() * currentIndex);
+      const randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
       [indexes[currentIndex], indexes[randomIndex]] = [
         indexes[randomIndex],
@@ -253,8 +253,8 @@ class GamePage {
       ];
     }
     for (let i = 0; i < Object.keys(condition.cards).length; i++) {
-      let src = condition.cards[i].suit;
-      let rank = condition.cards[i].rank;
+      const src = condition.cards[i].suit;
+      const rank = condition.cards[i].rank;
       let gameItemImg = document.createElement("img");
       gameItemImg.classList.add("game-item-img");
       gameItemImg.src = src;

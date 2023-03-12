@@ -16,12 +16,12 @@
 }
 
 .game-item {
+  position: relative;
   width: 113px;
   height: 151px;
+  font-size: 24px;
   background-color: $third-background;
   border-radius: 6px;
-  font-size: 24px;
-  position: relative;
 
   &-shirt {
     width: 100%;
@@ -33,13 +33,13 @@
   }
 
   &-img {
-    scale: 110%;
     position: absolute;
-    margin: auto;
     top: 0;
-    left: 0;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    scale: 110%;
   }
 }
 

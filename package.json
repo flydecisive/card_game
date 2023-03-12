@@ -9,7 +9,7 @@
     "stylelint": "stylelint ./src/**/*{.css,.scss}",
     "stylelint:fix": "stylelint ./src/**/*{.css,.scss} --fix",
     "lint": "npm run lint:ts && npm run stylelint:fix && npm run stylelint",
-    "build": "webpack --mode=development",
+    "build": "webpack --mode=production",
     "start": "webpack serve --mode=development"
   },
   "repository": {
