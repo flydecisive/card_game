@@ -8,11 +8,9 @@
     "lint:ts": "eslint ./src/**/*.ts",
     "stylelint": "stylelint ./src/**/*{.css,.scss}",
     "stylelint:fix": "stylelint ./src/**/*{.css,.scss} --fix",
-    "prepare": "husky install",
-    "lint": "npm run lint:ts && npm run stylelint:fix",
-    "build": "cross-env NODE_ENV=production webpack",
-    "testbuild": "webpack --mode=development",
-    "start": "webpack-dev-server --open"
+    "lint": "npm run lint:ts && npm run stylelint:fix && npm run stylelint",
+    "build": "webpack --mode=development",
+    "start": "webpack serve --mode=development"
   },
   "repository": {
     "type": "git",
@@ -33,14 +31,15 @@
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^8.0.3",
     "mini-css-extract-plugin": "^2.7.3",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.76.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -49,11 +48,11 @@
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "prettier": "^2.8.4",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.5",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^30.0.1",
-    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-order": "^6.0.3",
     "stylelint-prettier": "^3.0.0",
     "stylelint-scss": "^4.4.0"

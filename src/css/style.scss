@@ -1,11 +1,11 @@
-@import 'vars';
-@import 'start-page';
-@import 'game-page';
+@import "vars";
+@import "start-page";
+@import "game-page";
 
 * {
   margin: 0;
   padding: 0;
-  // font-family: $font-family-regular, sans-serif;
+  font-family: $font-family-regular, sans-serif;
 }
 
 .center {

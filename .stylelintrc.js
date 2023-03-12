@@ -4,9 +4,10 @@ module.exports = {
     'stylelint-config-rational-order',
     'stylelint-prettier/recommended',
     'stylelint-config-standard-scss',
+    'stylelint-config-prettier',
   ],
   plugins: ['stylelint-order', 'stylelint-scss'],
   rules: {
-    // Дополнительные правила
+    'declaration-colon-space-after': 'always',
   },
 };

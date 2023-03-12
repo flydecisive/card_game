@@ -1,18 +1,18 @@
-// // fonts
-// @font-face {
-//   font-family: 'StratosSkyeng Regular';
-//   src: url('/fonts/stratosskyengweb-regular.woff2') format('woff2'),
-//     url('/fonts/stratosskyengweb-regular.woff') format('woff');
-// }
+// fonts
+@font-face {
+  font-family: "StratosSkyeng Regular";
+  src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
+    url("/fonts/stratosskyengweb-regular.woff") format("woff");
+}
 
-// @font-face {
-//   font-family: 'StratosSkyeng Medium';
-//   src: url('/fonts/stratosskyengweb-medium.woff2') format('woff2'),
-//     url('/fonts/stratosskyengweb-medium.woff') format('woff');
-// }
+@font-face {
+  font-family: "StratosSkyeng Medium";
+  src: url("/fonts/stratosskyengweb-medium.woff2") format("woff2"),
+    url("/fonts/stratosskyengweb-medium.woff") format("woff");
+}
 
-// $font-family-regular: 'StratosSkyeng Regular';
-// $font-family-medium: 'StratosSkyeng Medium';
+$font-family-regular: "StratosSkyeng Regular";
+$font-family-medium: "StratosSkyeng Medium";
 
 // backgrounds
 $main-background: #004980;
