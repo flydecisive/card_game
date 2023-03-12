@@ -6,7 +6,7 @@ module.exports = {
     'stylelint-config-standard-scss',
     'stylelint-config-prettier',
   ],
-  plugins: ['stylelint-order', 'stylelint-scss'],
+  plugins: ["stylelint-order", "stylelint-scss"],
   rules: {
     'declaration-colon-space-after': 'always',
   },
