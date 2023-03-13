@@ -1,9 +1,10 @@
 import "./css/style.scss";
+import { EndPage } from "./end_page";
 
 interface Condition {
   complexity: string | null;
   move: string | null;
-  time: number | null;
+  time: string | null;
   cards: { [key: number]: { rank: string; suit: string } };
   userCards: string[];
 }
@@ -31,6 +32,7 @@ function generateCards(
   complexity: string,
   condition: Condition,
 ): void {
+  condition.cards = { 1: { rank: "", suit: "" } };
   let pairsCount: number;
   if (complexity === "1") {
     pairsCount = 3;
@@ -55,19 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
   if (container) {
     new StartPage(3, container);
-    const button = container.querySelector(".button");
-    const inputs = container.querySelectorAll(".input");
-    inputs.forEach((input) => {
-      input.addEventListener("click", () => {
-        condition.complexity = input.getAttribute("value");
-      });
-    });
-    button?.addEventListener("click", () => {
-      container.innerHTML = "";
-      generateCards(suits, ranks, condition.complexity, condition);
-      const itemsCount = Object.keys(condition.cards).length * 2;
-      new GamePage(container, itemsCount);
-    });
   }
 });
 
@@ -90,6 +79,12 @@ class StartPage {
     const button = document.createElement("button");
     button.classList.add("button");
     button.textContent = "Старт";
+    button?.addEventListener("click", () => {
+      container.innerHTML = "";
+      generateCards(suits, ranks, condition.complexity, condition);
+      const itemsCount = Object.keys(condition.cards).length * 2;
+      new GamePage(container, itemsCount);
+    });
     for (let i = 0; i < elementsCount; i++) {
       const buttonListItem = document.createElement("div");
       buttonListItem.classList.add("button-list-item");
@@ -99,6 +94,10 @@ class StartPage {
       input.type = "radio";
       input.name = "radio";
       input.value = `${i + 1}`;
+      input.addEventListener("click", () => {
+        condition.complexity = input.getAttribute("value");
+        console.log(condition.complexity);
+      });
       const label = document.createElement("label");
       label.setAttribute("for", `radio-${i + 1}`);
       label.textContent = `${i + 1}`;
@@ -176,14 +175,23 @@ class GamePage {
             condition.cards[Number(condition.userCards[0])].suit ===
               condition.cards[Number(condition.userCards[1])].suit
           ) {
-            console.log(true);
             const elem = Number(choosenItems[0].getAttribute("data-key"));
             delete condition.cards[elem];
             condition.userCards = [];
             choosenItems = [];
 
             if (Object.keys(condition.cards).length === 0) {
-              alert("Вы выйграли!");
+              new EndPage(
+                container,
+                "Вы выйграли!",
+                "00.00",
+                "./static/celebration.png",
+              );
+              const button = document.querySelector(".button");
+              button.addEventListener("click", () => {
+                container.innerHTML = "";
+                new StartPage(3, container);
+              });
             }
           } else {
             setTimeout(function () {
@@ -201,7 +209,17 @@ class GamePage {
               shirt.classList.remove("hidden");
               choosenItems = [];
               condition.userCards = [];
-              alert("Вы прогирали!");
+              new EndPage(
+                container,
+                "Вы проиграли!",
+                "00.00",
+                "./static/dead.png",
+              );
+              const button = document.querySelector(".button");
+              button.addEventListener("click", () => {
+                container.innerHTML = "";
+                new StartPage(3, container);
+              });
             }, 500);
           }
         }
