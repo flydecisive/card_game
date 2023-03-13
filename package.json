@@ -5,10 +5,12 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:ts": "eslint ./**/*.ts",
-    "stylelint": "stylelint ./**/*{.css,.scss}",
-    "stylelint:fix": "stylelint ./**/*{.css,.scss} --fix",
-    "lint": "npm run lint:ts && npm run stylelint:fix && npm run stylelint"
+    "lint:ts": "eslint ./src/**/*.ts",
+    "stylelint": "stylelint ./src/**/*{.css,.scss}",
+    "stylelint:fix": "stylelint ./src/**/*{.css,.scss} --fix",
+    "lint": "npm run lint:ts && npm run stylelint:fix && npm run stylelint",
+    "build": "webpack --mode=production",
+    "start": "webpack serve --mode=development"
   },
   "repository": {
     "type": "git",
@@ -16,12 +18,33 @@
   },
   "keywords": [],
   "author": "",
+  "browserslist": "> 0.25%, not dead",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/flydecisive/card_game/issues"
   },
   "homepage": "https://github.com/flydecisive/card_game#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.3",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",
@@ -29,7 +52,11 @@
     "prettier": "^2.8.4",
     "stylelint": "^14.16.0",
     "stylelint-config-prettier": "^9.0.4",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-order": "^6.0.3",
