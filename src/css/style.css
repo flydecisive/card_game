@@ -158,6 +158,37 @@
   text-align: center;
 }
 
+.popup-img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 9px;
+}
+
+.popup-time {
+  margin-bottom: 40px;
+}
+
+.popup-time-title {
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.popup-time-value {
+  color: #000;
+  font-size: 64px;
+  line-height: 72px;
+}
+
+.end-page {
+  padding-top: 26px;
+}
+
+.end-page-title {
+  margin-bottom: 28px;
+}
+
 * {
   margin: 0;
   padding: 0;
