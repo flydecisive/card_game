@@ -1,7 +1,7 @@
 import "./css/style.scss";
 import { EndPage } from "./end_page";
 import { generateCards, suits, ranks } from "./generate_cards";
-import { condition, Condition } from "./condition";
+import { condition } from "./condition";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
@@ -46,7 +46,6 @@ class StartPage {
       input.value = `${i + 1}`;
       input.addEventListener("click", () => {
         condition.complexity = input.getAttribute("value");
-        console.log(condition.complexity);
       });
       const label = document.createElement("label");
       label.setAttribute("for", `radio-${i + 1}`);
@@ -229,7 +228,6 @@ class GamePage {
       gameItemRank.textContent = rank;
       gameItemRank.classList.add("game-item-rank");
       items[indexes[0]].appendChild(gameItemImg);
-      console.log(indexes[0]);
       items[indexes[0]].setAttribute("data-key", `${i}`);
       items[indexes[0]].appendChild(gameItemRank);
       indexes.splice(0, 1);
@@ -240,7 +238,6 @@ class GamePage {
       gameItemRank.textContent = rank;
       gameItemRank.classList.add("game-item-rank");
       items[indexes[0]].appendChild(gameItemImg);
-      console.log(indexes[0]);
       items[indexes[0]].setAttribute("data-key", `${i}`);
       items[indexes[0]].appendChild(gameItemRank);
       indexes.splice(0, 1);

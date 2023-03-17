@@ -24,6 +24,7 @@ export function generateCards(
   }
   let rank: number;
   let suit: number;
+  condition.cards = {};
   for (let i = 0; i < pairsCount; i++) {
     rank = Math.floor(Math.random() * ranks.length);
     suit = Math.floor(Math.random() * suits.length);
