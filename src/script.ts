@@ -2,6 +2,7 @@ import "./css/style.scss";
 import { EndPage } from "./end_page";
 import { generateCards, suits, ranks } from "./generate_cards";
 import { condition } from "./condition";
+import { timeChange } from "./timer";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
@@ -80,6 +81,12 @@ class GamePage {
     const button = document.createElement("button");
     button.classList.add("button");
     button.textContent = "Начать заново";
+    button.addEventListener("click", function () {
+      container.innerHTML = "";
+      generateCards(suits, ranks, condition.complexity, condition);
+      const itemsCount = Object.keys(condition.cards).length * 2;
+      new GamePage(container, itemsCount);
+    });
     const gameItems = document.createElement("div");
     gameItems.classList.add("game-items");
     this.initGameItem(gameItems, itemsCount);
@@ -91,6 +98,9 @@ class GamePage {
     container.appendChild(gameWrapper);
     setTimeout(function () {
       const gameItems = document.querySelectorAll(".game-item");
+      const timerWrapper = document.querySelector(".timer-wrapper");
+      const sec = timerWrapper.querySelector(".game-timer-seconds");
+      const min = timerWrapper.querySelector(".game-timer-minutes");
       gameItems.forEach((item) => {
         const img = item.querySelector(".game-item-img");
         img.classList.add("hidden");
@@ -101,6 +111,7 @@ class GamePage {
         shirt.src = "./static/shirt.png";
         item.appendChild(shirt);
       });
+      timeChange(min, sec);
     }, 5000);
     const gameItemsList = gameItems.querySelectorAll(".game-item");
     condition.userCards = [];
@@ -129,10 +140,18 @@ class GamePage {
             choosenItems = [];
 
             if (Object.keys(condition.cards).length === 0) {
+              const timerWrapper = document.querySelector(".timer-wrapper");
+              const sec = timerWrapper.querySelector(
+                ".game-timer-seconds",
+              ).textContent;
+              const min = timerWrapper.querySelector(
+                ".game-timer-minutes",
+              ).textContent;
+              condition.time = `${min}.${sec}`;
               new EndPage(
                 container,
                 "Вы выйграли!",
-                "00.00",
+                condition.time,
                 "./static/celebration.png",
               );
               const button = document.querySelector(".button");
@@ -157,10 +176,18 @@ class GamePage {
               shirt.classList.remove("hidden");
               choosenItems = [];
               condition.userCards = [];
+              const timerWrapper = document.querySelector(".timer-wrapper");
+              const sec = timerWrapper.querySelector(
+                ".game-timer-seconds",
+              ).textContent;
+              const min = timerWrapper.querySelector(
+                ".game-timer-minutes",
+              ).textContent;
+              condition.time = `${min}.${sec}`;
               new EndPage(
                 container,
                 "Вы проиграли!",
-                "00.00",
+                condition.time,
                 "./static/dead.png",
               );
               const button = document.querySelector(".button");
