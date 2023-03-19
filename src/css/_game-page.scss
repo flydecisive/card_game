@@ -23,6 +23,10 @@
   background-color: $third-background;
   border-radius: 6px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &-shirt {
     width: 100%;
     height: 100%;

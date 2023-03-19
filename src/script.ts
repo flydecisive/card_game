@@ -1,57 +1,7 @@
 import "./css/style.scss";
 import { EndPage } from "./end_page";
-
-interface Condition {
-  complexity: string | null;
-  move: string | null;
-  time: string | null;
-  cards: { [key: number]: { rank: string; suit: string } };
-  userCards: string[];
-}
-
-const condition: Condition = {
-  complexity: null,
-  move: null,
-  time: null,
-  cards: { 1: { rank: "", suit: "" } },
-  userCards: [""],
-};
-
-const suits = [
-  "./static/spades.png",
-  "./static/hearts.png",
-  "./static/diamonds.png",
-  "./static/clubs.png",
-];
-const ranks = ["A", "K", "Q", "J", "10", "9", "8", "7", "6"];
-
-// генерация карт для отгадывания
-function generateCards(
-  suits: string[],
-  ranks: string[],
-  complexity: string,
-  condition: Condition,
-): void {
-  condition.cards = { 1: { rank: "", suit: "" } };
-  let pairsCount: number;
-  if (complexity === "1") {
-    pairsCount = 3;
-  } else if (complexity === "2") {
-    pairsCount = 6;
-  } else if (complexity === "3") {
-    pairsCount = 9;
-  }
-  let rank: number;
-  let suit: number;
-  for (let i = 0; i < pairsCount; i++) {
-    rank = Math.floor(Math.random() * ranks.length);
-    suit = Math.floor(Math.random() * suits.length);
-    condition.cards[i] = {
-      rank: `${ranks[rank]}`,
-      suit: `${suits[suit]}`,
-    };
-  }
-}
+import { generateCards, suits, ranks } from "./generate_cards";
+import { condition } from "./condition";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
@@ -96,7 +46,6 @@ class StartPage {
       input.value = `${i + 1}`;
       input.addEventListener("click", () => {
         condition.complexity = input.getAttribute("value");
-        console.log(condition.complexity);
       });
       const label = document.createElement("label");
       label.setAttribute("for", `radio-${i + 1}`);
@@ -169,12 +118,11 @@ class GamePage {
         condition.userCards.push(item.getAttribute("data-key"));
         choosenItems.push(item);
         if (condition.userCards.length === 2) {
-          if (
-            condition.cards[Number(condition.userCards[0])].rank ===
-              condition.cards[Number(condition.userCards[1])].rank &&
-            condition.cards[Number(condition.userCards[0])].suit ===
-              condition.cards[Number(condition.userCards[1])].suit
-          ) {
+          const rank1 = condition.cards[Number(condition.userCards[0])].rank;
+          const rank2 = condition.cards[Number(condition.userCards[1])].rank;
+          const suit1 = condition.cards[Number(condition.userCards[0])].suit;
+          const suit2 = condition.cards[Number(condition.userCards[1])].suit;
+          if (rank1 === rank2 && suit1 === suit2) {
             const elem = Number(choosenItems[0].getAttribute("data-key"));
             delete condition.cards[elem];
             condition.userCards = [];
@@ -280,7 +228,6 @@ class GamePage {
       gameItemRank.textContent = rank;
       gameItemRank.classList.add("game-item-rank");
       items[indexes[0]].appendChild(gameItemImg);
-      console.log(indexes[0]);
       items[indexes[0]].setAttribute("data-key", `${i}`);
       items[indexes[0]].appendChild(gameItemRank);
       indexes.splice(0, 1);
@@ -291,7 +238,6 @@ class GamePage {
       gameItemRank.textContent = rank;
       gameItemRank.classList.add("game-item-rank");
       items[indexes[0]].appendChild(gameItemImg);
-      console.log(indexes[0]);
       items[indexes[0]].setAttribute("data-key", `${i}`);
       items[indexes[0]].appendChild(gameItemRank);
       indexes.splice(0, 1);
