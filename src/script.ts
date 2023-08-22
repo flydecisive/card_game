@@ -150,7 +150,7 @@ class GamePage {
               condition.time = `${min}.${sec}`;
               new EndPage(
                 container,
-                "Вы выйграли!",
+                "Вы выиграли!",
                 condition.time,
                 "./static/celebration.png",
               );
