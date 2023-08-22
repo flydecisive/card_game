@@ -1,2 +1,3 @@
-# card_game
-creating a game of guessing pairs of cards
+# Игра по угадыванию карт
+
+## Использовал JS, SCSS, Husky, Webpack
